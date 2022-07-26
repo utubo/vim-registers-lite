@@ -1,6 +1,6 @@
 # vim-registers-lite.nvim
 
-[registers.nvim](https://github.com/tversteeg/registers.nvim) for Vim.
+The [registers.nvim](https://github.com/tversteeg/registers.nvim) clone for Vim.
 
 - This is a simple poting, not perfect. (I have not seen the source code.)
 - The options of registers.nvim are not supported.
@@ -19,16 +19,17 @@ call dein#add('utubo/vim-registers-lite.nvim')
 
 Type `"` in Nomal-mode or `<C-r>` in Insert-mode.
 
-- `j`, `<C-n>`, `<Tab>`, `<Down>`<br>
-  Move selection down
-- `k`, `<C-p>`, `<S-Tab>`, `<Up>`<br>
-  Move selection up
-- `G`<br>
-  Goto last line
-- `<CR>`, `<Space>`<br>
-  Feedkeys `"{selection}`
-- Other keys
-  Feedkeys `"{key}`
+Popup-menu
+  - `j`, `<C-n>`, `<Tab>`, `<Down>`<br>
+    Move the selection down
+  - `k`, `<C-p>`, `<S-Tab>`, `<Up>`<br>
+    Move the selection up
+  - `G`<br>
+    Goto last line
+  - `<CR>`, `<Space>`<br>
+    Feedkeys `"{selection}`
+  - Other keys<br>
+    Feedkeys `"{key}`
 
 ## Configuration
 
