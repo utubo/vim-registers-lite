@@ -22,6 +22,6 @@ Hilight()
 
 augroup registerslite
   au!
-  au ColorScheme * call <SID>Hilight()
+  au ColorScheme * call Hilight()
 augroup End
 
