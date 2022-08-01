@@ -14,9 +14,9 @@ if exists('g:registerslite')
 endif
 g:registerslite = 1
 
-nnoremap <silent> " :<C-u>call registerslite#Popup('n')<CR>
-inoremap <silent> <C-r> <C-o>:call registerslite#Popup('i')<CR>
-tnoremap <silent> <C-w>" <C-w>:call registerslite#Popup('t')<CR>
+nnoremap " <Cmd>call registerslite#Popup('n')<CR>
+inoremap <C-r> <C-o><Cmd>call registerslite#Popup('i')<CR>
+tnoremap <C-w>" <Cmd>call registerslite#Popup('t')<CR>
 
 Hilight()
 
