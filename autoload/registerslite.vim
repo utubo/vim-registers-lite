@@ -35,6 +35,9 @@ export def Popup(mode: string)
         return popup_filter_menu(id, 'j')
       elseif index(["\<CR>", " "], key) !=# -1
         return popup_filter_menu(id, ' ')
+      elseif key ==# "g"
+        win_execute(winid, 'setpos(".", [0, 1, 1, 0])')
+        return true
       elseif key ==# "G"
         win_execute(winid, printf('setpos(".", [0, %d, 1, 0])', len(items)))
         return true

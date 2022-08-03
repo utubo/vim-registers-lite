@@ -24,8 +24,10 @@ Popup-menu
     Move the selection down
   - `k`, `<C-p>`, `<S-Tab>`, `<Up>`<br>
     Move the selection up
+  - `g`<br>
+    Goto the first line
   - `G`<br>
-    Goto last line
+    Goto the last line
   - `<CR>`, `<Space>`<br>
     Feedkeys `"{selection}`
   - Other keys<br>
