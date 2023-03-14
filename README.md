@@ -12,7 +12,7 @@ Vim9script
 ## Install
 
 ```vim
-call dein#add('utubo/vim-registers-lite.nvim')
+call dein#add('utubo/vim-registers-lite.vim')
 ```
 
 ## Usage
