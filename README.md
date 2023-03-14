@@ -1,4 +1,4 @@
-# vim-registers-lite.nvim
+# vim-registers-lite.vim
 
 The [registers.nvim](https://github.com/tversteeg/registers.nvim) clone for Vim.
 
