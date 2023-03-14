@@ -1,4 +1,4 @@
-# vim-registers-lite.vim
+# vim-registers-lite
 
 The [registers.nvim](https://github.com/tversteeg/registers.nvim) clone for Vim.
 
@@ -12,7 +12,7 @@ Vim9script
 ## Install
 
 ```vim
-call dein#add('utubo/vim-registers-lite.vim')
+call dein#add('utubo/vim-registers-lite')
 ```
 
 ## Usage
