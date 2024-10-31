@@ -23,5 +23,5 @@ Hilight()
 augroup registerslite
   au!
   au ColorScheme * call Hilight()
-augroup End
+augroup END
 
