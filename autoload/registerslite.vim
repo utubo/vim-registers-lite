@@ -41,7 +41,10 @@ export def Popup(mode: string)
       elseif key ==# "G"
         win_execute(winid, printf('setpos(".", [0, %d, 1, 0])', len(items)))
         return true
+      elseif key->len() !=# 1
+        return true
       else
+        g:a = key
         popup_close(id, -1)
         feedkeys(prefix .. key, 'n')
         return true
