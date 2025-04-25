@@ -1,9 +1,9 @@
 vim9script
 
-if exists('g:registers_lite_loaded')
+if exists('g:registerslite_loaded')
   finish
 endif
-g:registers_lite_loaded = 1
+g:registerslite_loaded = 1
 
 # Hilight
 def Hilight()
