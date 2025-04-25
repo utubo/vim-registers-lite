@@ -1,9 +1,15 @@
 vim9script
 
 const NAMES = '"0123456789abcdefghijklmnopqrstuvwxyz-.:%#/='
+const prefixs = {
+  n: '"',
+  i: "\<C-r>",
+  c: "\<C-r>",
+  t: "\<C-w>\"",
+}
 var winid = 0
 export def Popup(mode: string)
-  var prefix = mode ==# 'i' ? "\<C-r>" : mode ==# 't' ? "\<C-w>\"" : '"'
+  var prefix = get(prefixs, mode, '"')
   var items = []
   var values = []
   var hideDup = get(g:, 'registerslite_hide_dupricate', 1)

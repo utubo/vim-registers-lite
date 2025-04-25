@@ -1,5 +1,11 @@
 vim9script
 
+if exists('g:registers_lite_loaded')
+  finish
+endif
+g:registers_lite_loaded = 1
+
+# Hilight
 def Hilight()
   silent! hi link RegistersLite        PMenu
   silent! hi link RegistersLiteNumber  Number
@@ -9,19 +15,19 @@ def Hilight()
   silent! hi link RegistersLiteNonText Comment
 enddef
 
-if exists('g:registerslite')
-  finish
-endif
-g:registerslite = 1
-
-nnoremap " <Cmd>call registerslite#Popup('n')<CR>
-inoremap <C-r> <C-o><Cmd>call registerslite#Popup('i')<CR>
-tnoremap <C-w>" <Cmd>call registerslite#Popup('t')<CR>
-
 Hilight()
 
 augroup registerslite
   au!
   au ColorScheme * call Hilight()
 augroup END
+
+# Mapping
+nmap <Plug>(registers-lite) <Cmd>call registerslite#Popup(mode())<CR>
+map! <Plug>(registers-lite) <Cmd>call registerslite#Popup(mode())<CR>
+tmap <Plug>(registers-lite) <Cmd>call registerslite#Popup(mode())<CR>
+
+nnoremap " <Plug>(registers-lite)
+noremap! <C-r> <Plug>(registers-lite)
+tnoremap <C-w>" <Plug>(registers-lite)
 
