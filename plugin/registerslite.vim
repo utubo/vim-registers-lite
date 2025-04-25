@@ -23,11 +23,11 @@ augroup registerslite
 augroup END
 
 # Mapping
-nmap <Plug>(registers-lite) <Cmd>call registerslite#Popup(mode())<CR>
-map! <Plug>(registers-lite) <Cmd>call registerslite#Popup(mode())<CR>
-tmap <Plug>(registers-lite) <Cmd>call registerslite#Popup(mode())<CR>
+nmap <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
+map! <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
+tmap <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
 
-nnoremap " <Plug>(registers-lite)
-noremap! <C-r> <Plug>(registers-lite)
-tnoremap <C-w>" <Plug>(registers-lite)
+nnoremap " <Plug>(registerslite)
+noremap! <C-r> <Plug>(registerslite)
+tnoremap <C-w>" <Plug>(registerslite)
 
