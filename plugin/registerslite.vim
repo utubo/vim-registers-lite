@@ -27,7 +27,7 @@ nmap <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
 map! <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
 tmap <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
 
-nnoremap " <Plug>(registerslite)
-noremap! <C-r> <Plug>(registerslite)
-tnoremap <C-w>" <Plug>(registerslite)
+silent! nnoremap <unique> " <Plug>(registerslite)
+silent! noremap! <unique> <C-r> <Plug>(registerslite)
+silent! tnoremap <unique> <C-w>" <Plug>(registerslite)
 
