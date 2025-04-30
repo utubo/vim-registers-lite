@@ -1,6 +1,6 @@
 vim9script
 
-const NAMES = '"0123456789abcdefghijklmnopqrstuvwxyz-.:%#/='
+const NAMES = '"0123456789abcdefghijklmnopqrstuvwxyz-*~/.:%#'
 const prefixs = {
   n: '"',
   i: "\<C-r>",
@@ -29,7 +29,7 @@ export def Popup(mode: string)
   winid = popup_atcursor(items, {
     cursorline: true,
     mapping: 0,
-    maxwidth: min([get(g:, 'registerslite_max_width', 100), &columns]),
+    maxwidth: min([get(g:, 'registerslite_max_width', 32), &columns]),
     maxheight: maxheight,
     moved: 'any',
     wrap: false,

@@ -39,7 +39,7 @@ Popup-menu
 
 Maximum width of the window.
 
-Default: `100`
+Default: `32`
 
 ### `g:registerslite_max_height`
 
