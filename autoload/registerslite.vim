@@ -1,6 +1,6 @@
 vim9script
 
-const NAMES = '"0123456789abcdefghijklmnopqrstuvwxyz-*~/.:%#'
+const NAMES = '"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/'
 const prefixs = {
   n: '"',
   i: "\<C-r>",
