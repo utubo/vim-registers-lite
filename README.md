@@ -45,6 +45,12 @@ Default: `32`
 
 Maximum height of the window.
 
+### `g:registerslite_delay`
+
+How long, in seconds, to wait before applying the function.
+
+Default: `0`
+
 ## `g:registerslite_hide_dupricate`
 
 Hide regsters with dupricate value.

@@ -8,6 +8,19 @@ const prefixs = {
   t: "\<C-w>\"",
 }
 var winid = 0
+var timer = 0
+export def PopupDelay(mode: string)
+  const sec = get(g:, 'registerslite_delay', 0)
+  if !sec
+    Popup(mode)
+  else
+    get(prefixs, mode, '"')->feedkeys('n')
+    timer = timer_start(sec * 1000, (_) => Popup(mode))
+    autocmd CursorMoved,CursorMovedI,TextChanged,TextChangedI,CmdlineChanged * ++once {
+      timer_stop(timer)
+    }
+  endif
+enddef
 export def Popup(mode: string)
   var prefix = get(prefixs, mode, '"')
   var items = []
@@ -50,7 +63,6 @@ export def Popup(mode: string)
       elseif key ==# "\<CursorHold>"
         return true
       else
-        g:a = key
         popup_close(id, -1)
         feedkeys(prefix .. key, 'n')
         return true

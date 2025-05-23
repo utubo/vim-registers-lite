@@ -23,9 +23,9 @@ augroup registerslite
 augroup END
 
 # Mapping
-nmap <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
-map! <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
-tmap <Plug>(registerslite) <Cmd>call registerslite#Popup(mode())<CR>
+nmap <Plug>(registerslite) <Cmd>call registerslite#PopupDelay(mode())<CR>
+map! <Plug>(registerslite) <Cmd>call registerslite#PopupDelay(mode())<CR>
+tmap <Plug>(registerslite) <Cmd>call registerslite#PopupDelay(mode())<CR>
 
 silent! nnoremap <unique> " <Plug>(registerslite)
 silent! noremap! <unique> <C-r> <Plug>(registerslite)
