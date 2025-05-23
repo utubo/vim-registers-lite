@@ -64,6 +64,7 @@ export def Popup(mode: string)
         return true
       else
         popup_close(id, -1)
+        redraw
         feedkeys(prefix .. key, 'n')
         return true
       endif
@@ -79,5 +80,6 @@ export def Popup(mode: string)
   win_execute(winid, 'syntax match RegistersLiteSymbol  /^[^0-9a-z]/')
   win_execute(winid, 'syntax match RegistersLiteCoron   /\(^.\)\@<=:/')
   win_execute(winid, 'syntax match RegistersLiteNonText /[›↵]/')
+  redraw
 enddef
 
