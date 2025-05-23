@@ -15,7 +15,7 @@ export def PopupDelay(mode: string)
     Popup(mode)
   else
     get(prefixs, mode, '"')->feedkeys('n')
-    timer = timer_start(sec * 1000, (_) => Popup(mode))
+    timer = timer_start(float2nr(sec * 1000), (_) => Popup(mode))
     autocmd CursorMoved,CursorMovedI,TextChanged,TextChangedI,CmdlineChanged * ++once {
       timer_stop(timer)
     }
