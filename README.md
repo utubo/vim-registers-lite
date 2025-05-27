@@ -37,7 +37,7 @@ Popup-menu
 
 ### `g:registerslite_bind_keys`
 
-Dict of Mapping.
+The Dict of key mappings.
 
 Default:
 ```
