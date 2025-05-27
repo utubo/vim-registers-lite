@@ -46,7 +46,7 @@ enddef
 
 def GetPos(mode: string, is_delay: bool): dict<any>
   return is_delay ? {
-    # hidden (left-bottom of screen)
+    # hidden (right bottom of screen)
     col: &columns + 1,
     line: &lines + 1,
     highlight: 'MsgArea',
@@ -58,7 +58,7 @@ def GetPos(mode: string, is_delay: bool): dict<any>
     highlight: 'RegistersLite',
     cursorline: true,
   } : {
-    # normal mode, insert mode
+    # normal mode, insert mode, terminal
     col: 'cursor',
     line: 'cursor-1',
     highlight: 'RegistersLite',
