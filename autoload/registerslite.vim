@@ -1,7 +1,7 @@
 vim9script
 
 const NAMES = '"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/'
-const prefixs = {
+const PREFIXS = {
   n: '"',
   i: "\<C-r>",
   c: "\<C-r>",
@@ -68,7 +68,7 @@ enddef
 
 export def Popup(mode: string, is_delay: bool = false)
   SetupItems()
-  const prefix = get(prefixs, mode, '"')
+  const prefix = get(PREFIXS, mode, '"')
   const winline = win_screenpos(0)[0] + winline() - 1
   var maxheight = (winline <= &lines / 2 + 1) ? &lines - winline - 2 : &lines
   maxheight = min([maxheight, get(g:, 'registerslite_max_height', &lines)])
