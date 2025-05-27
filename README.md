@@ -35,6 +35,19 @@ Popup-menu
 
 ## Configuration
 
+### `g:registerslite_bind_keys`
+
+Dict of Mapping.
+
+Default:
+```
+{
+  'nnoremap': '"',
+  'noremap!': '<C-r>',
+  'tnoremap': '<C-w>"',
+}
+```
+
 ### `g:registerslite_max_width`
 
 Maximum width of the window.

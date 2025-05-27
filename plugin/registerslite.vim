@@ -27,7 +27,13 @@ nmap <Plug>(registerslite) <Cmd>call registerslite#PopupDelay(mode())<CR>
 map! <Plug>(registerslite) <Cmd>call registerslite#PopupDelay(mode())<CR>
 tmap <Plug>(registerslite) <Cmd>call registerslite#PopupDelay(mode())<CR>
 
-silent! nnoremap <unique> " <Plug>(registerslite)
-silent! noremap! <unique> <C-r> <Plug>(registerslite)
-silent! tnoremap <unique> <C-w>" <Plug>(registerslite)
-
+const keys = get(g:, 'registerslite_bind_keys', {
+  'nnoremap': '"',
+  'noremap!': '<C-r>',
+  'tnoremap': '<C-w>"',
+})
+if !!keys
+  for m in keys->keys()
+    execute $'silent! {m} <unique> {keys[m]} <Plug>(registerslite)'
+  endfor
+endif
