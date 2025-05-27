@@ -10,6 +10,7 @@ const prefixs = {
 var winid = 0
 var timer = 0
 var items = []
+
 export def PopupDelay(mode: string)
   const sec = get(g:, 'registerslite_delay', 0)
   Popup(mode, !!sec)
@@ -19,6 +20,23 @@ export def PopupDelay(mode: string)
       (_) => ShowItems(mode)
     )
   endif
+enddef
+
+def SetupItems()
+  items = []
+  var values = []
+  const hideDup = !!get(g:, 'registerslite_hide_dupricate', 1)
+  for name in NAMES
+    # NOTE: prevent W24 message
+    silent! var value = getreg(name, 1)
+      ->substitute('\t', '›', 'g')
+      ->substitute('\n', '↵', 'g')
+    if value ==# '' || hideDup && index(values, value) !=# -1
+      continue
+    endif
+    items->add(printf('%s: %s', name, value))
+    values->add(value)
+  endfor
 enddef
 
 def ShowItems(mode: string)
@@ -49,25 +67,11 @@ def GetPos(mode: string, is_delay: bool): dict<any>
 enddef
 
 export def Popup(mode: string, is_delay: bool = false)
-  items = []
-  var prefix = get(prefixs, mode, '"')
-  var values = []
-  var hideDup = get(g:, 'registerslite_hide_dupricate', 1)
-  for name in NAMES
-    # NOTE: prevent W24 message
-    silent! var value = getreg(name, 1)
-      ->substitute('\t', '›', 'g')
-      ->substitute('\n', '↵', 'g')
-    if value ==# '' || hideDup ==# 1 && index(values, value) !=# -1
-      continue
-    endif
-    items->add(printf('%s: %s', name, value))
-    values->add(value)
-  endfor
-  var winline = win_screenpos(0)[0] + winline() - 1
+  SetupItems()
+  const prefix = get(prefixs, mode, '"')
+  const winline = win_screenpos(0)[0] + winline() - 1
   var maxheight = (winline <= &lines / 2 + 1) ? &lines - winline - 2 : &lines
   maxheight = min([maxheight, get(g:, 'registerslite_max_height', &lines)])
-  var line: any = ''
   winid = popup_atcursor(is_delay ? '' : items, {
     mapping: 0,
     maxwidth: min([get(g:, 'registerslite_max_width', 32), &columns]),
