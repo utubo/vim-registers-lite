@@ -6,14 +6,18 @@ endif
 g:registerslite_loaded = 1
 
 # Hilight
-if !hlexists('RegistersLite')
-  hi link RegistersLite        PMenu
-  hi link RegistersLiteNumber  Number
-  hi link RegistersLiteChar    Directory
-  hi link RegistersLiteSymbol  Delimiter
-  hi link RegistersLiteCoron   Comment
-  hi link RegistersLiteNonText Comment
-endif
+def Color()
+  hi default link RegistersLite        PMenu
+  hi default link RegistersLiteNumber  Number
+  hi default link RegistersLiteChar    Directory
+  hi default link RegistersLiteSymbol  Delimiter
+  hi default link RegistersLiteCoron   Comment
+  hi default link RegistersLiteNonText Comment
+enddef
+Color()
+augroup registerslite
+  au! ColorScheme * Color()
+augroup END
 
 # Mapping
 nmap <Plug>(registerslite) <Cmd>call registerslite#PopupDelay(mode())<CR>
