@@ -5,7 +5,7 @@ if exists('g:registerslite_loaded')
 endif
 g:registerslite_loaded = 1
 
-# Hilight
+# Highlight
 def Color()
   hi default link RegistersLite        PMenu
   hi default link RegistersLiteNumber  Number
