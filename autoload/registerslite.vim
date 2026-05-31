@@ -74,8 +74,12 @@ export def Popup(mode: string, is_delay: bool = false)
   maxheight = min([maxheight, get(g:, 'registerslite_max_height', &lines)])
   # Close the completion menu to prevent overlapping.
   if pumvisible()
-    # feedkeys("\<C-e>", 'n') had no effect on closing it.
-    complete(col('.'), [])
+    if mode[0] ==# 'i'
+      # feedkeys("\<C-e>", 'n') had no effect on closing it.
+      complete(col('.'), [])
+    else
+      feedkeys("\<C-e>", 'n')
+    endif
   endif
   winid = popup_atcursor(is_delay ? '' : items, {
     mapping: 0,
@@ -98,6 +102,9 @@ export def Popup(mode: string, is_delay: bool = false)
         return true
       elseif key ==# "\<CursorHold>"
         return true
+      elseif key ==# "\<C-e>"
+        # Prevent this popup from being closed by the preprocessing feedkeys().
+        return false
       else
         popup_close(id, -1)
         redraw
