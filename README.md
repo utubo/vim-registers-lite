@@ -1,6 +1,6 @@
 # vim-registers-lite
 
-The [registers.nvim](https://github.com/tversteeg/registers.nvim) clone for Vim.
+The [registers.nvim](https://codeberg.org/fosk/registers.nvim) clone for Vim.
 
 - This is a simple poting, not perfect. (I have not seen the source code.)
 - The options of registers.nvim are not supported.
