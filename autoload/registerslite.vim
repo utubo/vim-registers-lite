@@ -1,7 +1,7 @@
 vim9script
 
 const NAMES = '"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/'
-const PREFIXS = {
+const PREFIXES = {
   n: '"',
   i: "\<C-r>",
   c: "\<C-r>",
@@ -68,7 +68,7 @@ enddef
 
 export def Popup(mode: string, is_delay: bool = false)
   SetupItems()
-  const prefix = get(PREFIXS, mode, '"')
+  const prefix = get(PREFIXES, mode, '"')
   const winline = win_screenpos(0)[0] + winline() - 1
   var maxheight = (winline <= &lines / 2 + 1) ? &lines - winline - 2 : &lines
   maxheight = min([maxheight, get(g:, 'registerslite_max_height', &lines)])
@@ -109,7 +109,7 @@ export def Popup(mode: string, is_delay: bool = false)
   win_execute(winid, 'syntax match RegistersLiteNumber  /^\d/')
   win_execute(winid, 'syntax match RegistersLiteChar    /^[a-z]/')
   win_execute(winid, 'syntax match RegistersLiteSymbol  /^[^0-9a-z]/')
-  win_execute(winid, 'syntax match RegistersLiteCoron   /\(^.\)\@<=:/')
+  win_execute(winid, 'syntax match RegistersLiteColon   /\(^.\)\@<=:/')
   win_execute(winid, 'syntax match RegistersLiteNonText /[›↵]/')
   redraw
 enddef

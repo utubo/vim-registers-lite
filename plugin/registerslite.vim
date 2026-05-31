@@ -11,7 +11,7 @@ def Color()
   hi default link RegistersLiteNumber  Number
   hi default link RegistersLiteChar    Directory
   hi default link RegistersLiteSymbol  Delimiter
-  hi default link RegistersLiteCoron   Comment
+  hi default link RegistersLiteColon   Comment
   hi default link RegistersLiteNonText Comment
 enddef
 Color()
