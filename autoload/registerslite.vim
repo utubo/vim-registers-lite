@@ -72,6 +72,11 @@ export def Popup(mode: string, is_delay: bool = false)
   const winline = win_screenpos(0)[0] + winline() - 1
   var maxheight = (winline <= &lines / 2 + 1) ? &lines - winline - 2 : &lines
   maxheight = min([maxheight, get(g:, 'registerslite_max_height', &lines)])
+  # Close the completion menu to prevent overlapping.
+  if pumvisible()
+    # feedkeys("\<C-e>", 'n') had no effect on closing it.
+    complete(col('.'), [])
+  endif
   winid = popup_atcursor(is_delay ? '' : items, {
     mapping: 0,
     maxwidth: min([get(g:, 'registerslite_max_width', 32), &columns]),
