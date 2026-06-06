@@ -70,6 +70,12 @@ Hide registers with duplicate value.
 
 Default: `1`
 
+### `g:registerslite_use_registers`
+
+Show only specific registers in this order
+
+Default: `"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/`
+
 ### Highlight colors
 
 Default:

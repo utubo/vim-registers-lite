@@ -26,7 +26,8 @@ def SetupItems()
   items = []
   var values = []
   const hideDup = !!get(g:, 'registerslite_hide_dupricate', 1)
-  for name in NAMES
+  const names = get(g:, 'registerslite_use_registers', NAMES)
+  for name in names
     # NOTE: prevent W24 message
     silent! var value = getreg(name, 1)
       ->substitute('\t', '›', 'g')
