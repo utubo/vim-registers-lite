@@ -2,7 +2,7 @@
 
 The [registers.nvim](https://codeberg.org/fosk/registers.nvim) clone for Vim.
 
-- This is a simple poting, not perfect. (I have not seen the source code.)
+- This is a simple porting, not perfect. (I have not seen the source code.)
 - The options of registers.nvim are not supported.
 
 ## Requires
@@ -17,7 +17,7 @@ call dein#add('utubo/vim-registers-lite')
 
 ## Usage
 
-Type `"` in Nomal-mode or `<C-r>` in Insert-mode.
+Type `"` in Normal-mode or `<C-r>` in Insert-mode.
 
 Popup-menu
   - `j`, `<C-n>`, `<Tab>`, `<Down>`<br>
@@ -64,20 +64,21 @@ How long, in seconds, to wait before applying the function.
 
 Default: `0`
 
-## `g:registerslite_hide_dupricate`
+### `g:registerslite_hide_duplicate`
 
-Hide regsters with dupricate value.
+Hide registers with duplicate value.
 
 Default: `1`
 
-### Hilight colors
+### Highlight colors
+
 Default:
 ```vim
 hi link RegistersLite        PMenu
 hi link RegistersLiteNumber  Number
 hi link RegistersLiteChar    Directory
 hi link RegistersLiteSymbol  Delimiter
-hi link RegistersLiteCoron   Comment
+hi link RegistersLiteColon   Comment
 hi link RegistersLiteNonText Comment
 ```
 
