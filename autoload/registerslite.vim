@@ -41,7 +41,11 @@ def SetupItems()
 enddef
 
 def ShowItems(mode: string)
-  popup_setoptions(winid, GetPos(mode, false))
+  popup_setoptions(
+    winid,
+    GetPos(mode, false)
+      ->extend(get(g:, 'registerslite_popup_props', {}))
+  )
   popup_settext(winid, items)
 enddef
 

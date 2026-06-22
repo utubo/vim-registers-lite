@@ -76,6 +76,12 @@ Show only specific registers in this order
 
 Default: `"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/`
 
+
+### `g:registerslite_popup_props`
+
+You can override popup props.  
+See `h: popup_create-arguments`
+
 ### Highlight colors
 
 Default:
