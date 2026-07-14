@@ -20,67 +20,49 @@ call dein#add('utubo/vim-registers-lite')
 Type `"` in Normal-mode or `<C-r>` in Insert-mode.
 
 Popup-menu
-  - `j`, `<C-n>`, `<Tab>`, `<Down>`<br>
+
+- `j`, `<C-n>`, `<Tab>`, `<Down>`<br>
     Move the selection down
-  - `k`, `<C-p>`, `<S-Tab>`, `<Up>`<br>
+- `k`, `<C-p>`, `<S-Tab>`, `<Up>`<br>
     Move the selection up
-  - `g`<br>
+- `g`<br>
     Goto the first line
-  - `G`<br>
+- `G`<br>
     Goto the last line
-  - `<CR>`, `<Space>`<br>
+- `<CR>`, `<Space>`<br>
     Feedkeys `"{selection}`
-  - Other keys<br>
+- Other keys<br>
     Feedkeys `"{key}`
 
 ## Configuration
 
-### `g:registerslite_bind_keys`
-
-The Dict of key mappings.
-
-Default:
-```
-{
-  'nnoremap': '"',
-  'noremap!': '<C-r>',
-  'tnoremap': '<C-w>"',
-}
-```
-
-### `g:registerslite_max_width`
-
-Maximum width of the window.
-
-Default: `32`
-
-### `g:registerslite_max_height`
-
-Maximum height of the window.
-
-### `g:registerslite_delay`
-
-How long, in seconds, to wait before applying the function.
-
-Default: `0`
-
-### `g:registerslite_hide_duplicate`
-
-Hide registers with duplicate value.
-
-Default: `1`
-
-### `g:registerslite_use_registers`
-
-Show only specific registers in this order
-
-Default: `"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/`
-
-
-### `g:registerslite_popup_props`
-
-You can override popup props.  
-See `h: popup_create-arguments`
+- `g:registerslite_bind_keys`
+    The Dict of key mappings.  
+    Default:
+    ```
+    {
+      'nnoremap': '"',
+      'noremap!': '<C-r>',
+      'tnoremap': '<C-w>"',
+    }
+    ```
+- `g:registerslite_max_width`
+    Maximum width of the window.  
+    Default: `32`
+- `g:registerslite_max_height`
+    Maximum height of the window.
+- `g:registerslite_delay`
+    How long, in seconds, to wait before applying the function.  
+    Default: `0`
+- `g:registerslite_hide_duplicate`
+    Hide registers with duplicate value.  
+    Default: `1`
+- `g:registerslite_use_registers`
+    Show only specific registers in this order  
+    Default: `"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/`
+- `g:registerslite_popup_props`
+    You can override popup props.  
+    See `h: popup_create-arguments`
 
 ### Highlight colors
 
