@@ -36,66 +36,45 @@ USAGE                            *vim-registers-lite-vim-registers-lite-usage*
 
 Type `"` in Normal-mode or `<C-r>` in Insert-mode.
 
-Popup-menu - `j`, `<C-n>`, `<Tab>`, `<Down>` Move the selection down - `k`,
-`<C-p>`, `<S-Tab>`, `<Up>` Move the selection up - `g` Goto the first line -
-`G` Goto the last line - `<CR>`, `<Space>` Feedkeys `"{selection}` - Other keys
-Feedkeys `"{key}`
+Popup-menu
+
+- `j`, `<C-n>`, `<Tab>`, `<Down>`
+    Move the selection down
+- `k`, `<C-p>`, `<S-Tab>`, `<Up>`
+    Move the selection up
+- `g`
+    Goto the first line
+- `G`
+    Goto the last line
+- `<CR>`, `<Space>`
+    Feedkeys `"{selection}`
+- Other keys
+    Feedkeys `"{key}`
 
 
 CONFIGURATION            *vim-registers-lite-vim-registers-lite-configuration*
 
-
-G:REGISTERSLITE_BIND_KEYS ~
-
-The Dict of key mappings.
-
-Default:
-
->
-    {
-      'nnoremap': '"',
-      'noremap!': '<C-r>',
-      'tnoremap': '<C-w>"',
-    }
-<
-
-
-G:REGISTERSLITE_MAX_WIDTH ~
-
-Maximum width of the window.
-
-Default: `32`
-
-
-G:REGISTERSLITE_MAX_HEIGHT ~
-
-Maximum height of the window.
-
-
-G:REGISTERSLITE_DELAY ~
-
-How long, in seconds, to wait before applying the function.
-
-Default: `0`
-
-
-G:REGISTERSLITE_HIDE_DUPLICATE ~
-
-Hide registers with duplicate value.
-
-Default: `1`
-
-
-G:REGISTERSLITE_USE_REGISTERS ~
-
-Show only specific registers in this order
-
-Default: `"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/`
-
-
-G:REGISTERSLITE_POPUP_PROPS ~
-
-You can override popup props. See `h: popup_create-arguments`
+- `g:registerslite_bind_keys`
+    The Dict of key mappings.
+    Default:
+    `{       'nnoremap': '"',       'noremap!': '<C-r>',       'tnoremap': '<C-w>"',     }`
+- `g:registerslite_max_width`
+    Maximum width of the window.
+    Default: `32`
+- `g:registerslite_max_height`
+    Maximum height of the window.
+- `g:registerslite_delay`
+    How long, in seconds, to wait before applying the function.
+    Default: `0`
+- `g:registerslite_hide_duplicate`
+    Hide registers with duplicate value.
+    Default: `1`
+- `g:registerslite_use_registers`
+    Show only specific registers in this order
+    Default: `"0123456789abcdefghijklmnopqrstuvwxyz-*~.:%#/`
+- `g:registerslite_popup_props`
+    You can override popup props.
+    See `h: popup_create-arguments`
 
 
 HIGHLIGHT COLORS ~
