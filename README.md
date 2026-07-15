@@ -67,6 +67,7 @@ Popup-menu
 ### Highlight colors
 
 Default:
+
 ```vim
 hi link RegistersLite        PMenu
 hi link RegistersLiteNumber  Number
@@ -80,7 +81,8 @@ hi link RegistersLiteNonText Comment
 
 The GPLv3 License (GPLv3)
 
-Author
+Authors
+
 - tversteeg(registers.nvim)
 - utubo(vim-registers-lite)
 
